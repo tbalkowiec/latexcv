@@ -126,12 +126,17 @@
 %for floating figures
 \usepackage{wrapfig}
 \usepackage{float}
+\usepackage{wrapfig}
 %\floatstyle{boxed} 
 %\restylefloat{figure}
 
 %for drawing graphics		
 \usepackage{tikz}				
 \usetikzlibrary{shapes, backgrounds,mindmap, trees}
+
+\usepackage{tabularx}
+
+\usepackage{textpos}
 
 
 %----------------------------------------------------------------------------------------
@@ -299,14 +304,17 @@
 %----------------------------------------------------------------------------------------
 %	HEADER IMAGE
 %----------------------------------------------------------------------------------------
+% \includegraphics[trim= 320 130 460 210,clip,width=0.2\linewidth]
+% \begin{figure}[H]
+% \begin{flushright}
+% 	\includegraphics[height=5\baselineskip]{photo_TB.JPEG}	%trimming relative to image size!
+% \end{flushright}
+% \end{figure}
 
-%\begin{figure}[H]
-%\begin{flushright}
-%	\includegraphics[trim= 320 130 460 210,clip,width=0.2\linewidth]{myfoto.jpg}	%trimming relative to image size!
-%\end{flushright}
-%\end{figure}
 
-
+\begin{textblock*}{2.5cm}(\textwidth-2.5cm,0cm)
+    \includegraphics[width=2.5cm]{photo_TB.JPEG}
+\end{textblock*}
 %---------------------------------------------------------------------------------------
 %	TITLE HEADLINE
 %----------------------------------------------------------------------------------------
@@ -317,18 +325,27 @@
 	\small \textsc{Energoelektronik} \textcolor{sectcol}{\rule[-1mm]{1mm}{0.45cm}} \textsc{Adiunkt badawczo-dydaktyczny}\\[2pt]
 \end{center}
 
-
-
-\vspace{6pt}
-
+%\vspace{6pt}
 
 %---------------------------------------------------------------------------------------
 %	META SECTION
-%----------------------------------------------------------------------------------------
-% \metasection{Warsaw, Poland}{\textbf{Status:} M.Sc. Digital Media, \newline Scientific Employee}
-% \metasection{www.jankuester.com}{\textbf{Fields:} Software Engineering, Consulting, Scrum, Usability} 
-% \metasection{info@jankuester.com}{\textbf{Techs:} Meteor, Javascript, Mongo,. Bootstrap, Bash, Git, Webstorm}
-% \metasection{+49 176 *** *** **}{\textbf{Activities:} Global Game Jam, Open Source, Fitness}
+% %----------------------------------------------------------------------------------------
+
+% \begin{minipage}{0.6\textwidth}% adapt widths of minipages to your needs
+% \metasection{Warszawa, Polska}{\textbf{Status:} Nevomo Poland Sp. z o.o., \newline Energoelektronik}
+% \end{minipage}%
+% \hfill%
+% \begin{minipage}{0.3\textwidth}\raggedleft
+% \includegraphics[width=0.3\textwidth]{photo_TB.JPEG}
+% \end{minipage}
+
+
+\metasection{Warszawa, Polska}{\textbf{Status:} Nevomo Poland Sp. z o.o., \newline Energoelektronik}
+% % \metasection{www.jankuester.com}{\textbf{Fields:} Software Engineering, Consulting, Scrum, Usability} 
+% % \metasection{tomasz.balkowiec@gmail.com}{\textbf{Techs:} Meteor, Javascript, Mongo,. Bootstrap, Bash, Git, Webstorm}
+% \metasection{tomasz.balkowiec@gmail.com}{}
+% \metasection{+48 508 950 117}{}
+% \metasection{+48 508 950 117}{\textbf{Activities:} Global Game Jam, Open Source, Fitness}
 % \vspace{-2pt}
 % \textcolor{softcol}{\hrule}
 % \vspace{6pt}
@@ -340,7 +357,7 @@
 %----------------------------------------------------------------------------------------
 \vspace{-6pt}
 \cvsection{Podsumowanie}
-Jestem absolwentem elektrotechniki na Wydziale Elektrycznym Politechniki Warszawskiej oraz doktorem nauk technicznych. Obecnie pracuję jako energoelektronik w firmie Nevomo Poland oraz adiunkt badawczo-dydaktyczny na Politechnice Warszawskiej. W pracy zawodowej zajmuje się głównie badaniami różnego rodzaju przekształtników oraz implementacją algorytmów sterowania na mikrokontrolerze sygnałowym. Do najciekawszych aplikacji przy których miałem okazję brać udział są prace nad przekształtnikami opartymi na tranzystorach SiC/GaN oraz napęd z silnikiem liniowym wykorzystywanym w aplikacji kolejowej. 
+Jestem absolwentem elektrotechniki na Wydziale Elektrycznym Politechniki Warszawskiej oraz doktorem nauk technicznych. Obecnie pracuję jako energoelektronik w firmie Nevomo Poland oraz adiunkt badawczo-dydaktyczny na Politechnice Warszawskiej. W pracy zawodowej zajmuje się głównie badaniami różnego rodzaju przekształtników oraz implementacją algorytmów sterowania na mikrokontrolerze sygnałowym. Do najciekawszych aplikacji przy których miałem okazję brać udział są prace nad przekształtnikami opartymi na tranzystorach SiC/GaN oraz napęd z silnikiem liniowym wykorzystywanym w aplikacji kolejowej.
 \\
 
 %============================================================================%
@@ -361,27 +378,27 @@ Jestem absolwentem elektrotechniki na Wydziale Elektrycznym Politechniki Warszaw
 }
 
 %
-\cvevent{02.2021 - obecnie}{Adiunkt / asystent badawczo-dydaktyczny}{Politechnika Warszawska}{
-	{Realizacja badań naukowych oraz przygotowywanie publikacji naukowych, związanych głównie z tematyką rozprawy doktorskiej.},
-	{Przygotowywanie materiałów dydaktycznych oraz prowadzenie zajęć laboratoryjnych oraz wykładów.}
+\cvevent{02.2025 - obecnie}{Adiunkt badawczo-dydaktyczny}{Politechnika Warszawska}{
+	{Realizacja badań naukowych, przygotowywanie publikacji naukowych oraz udział w konferencjach naukowych związanych głównie z tematyką rozprawy doktorskiej.},
+	{Przygotowywanie materiałów dydaktycznych oraz prowadzenie wykładów oraz zajęć laboratoryjnych.}
 }
 
-% \cvevent{2014 - 2011}{Research Project Co-investigator}{Warsaw University of Technology}{
-% 	{Theory of Adjustable Speed Electric Power Generation},
-% 	{Implement the frontend for a BPMN compatible engine within We4IT Aveedo}
-% }
+\cvevent{02.2021 - 01.2025}{Asystent badawczo-dydaktyczny}{Politechnika Warszawska}{
+	{Realizacja badań naukowych, przygotowywanie publikacji naukowych oraz udział w konferencjach naukowych związanych głównie z tematyką rozprawy doktorskiej.},
+	{Przygotowywanie materiałów dydaktycznych oraz prowadzenie wykładów oraz zajęć laboratoryjnych.}
+}
 
-% \cvevent{02.2021 - 01.2025}{Asystent badawczo-dydaktyczny}{Politechnika Warszawska}{
-% 	{Realizacja badań naukowych oraz przygotowywanie publikacji naukowych.},
-% 	{Przygotowywanie materiałów dydaktycznych oraz prowadzenie zajęć laboratoryjnych oraz wykładów.}
-% }
+\cvevent{2024 - 2025}{Wykonawca projektu w ramach Konsorcjum}{Politechnika Warszawska}{
+	{Implementacja algorytmów synchronizacji przekształtników z siecią elektroenergetyczną.},
+	{Opracowanie modelu symulacyjnego integrującego string'i przekształtnikowe współpracujące z siecią elektroenergetyczną.}
+}
 
-\cvevent{2018 - 2021}{Wykonawca projektu NCBR}{Warsaw University of Technology}{
+\cvevent{2018 - 2021}{Wykonawca projektu NCBR}{Politechnika Warszawska}{
 	{Projektowanie oraz wykonanie przekształtników opartych na tranzystorach GaN oraz SiC.},
 	{Modelowanie dwu- i trójwymiarowe budowanych przekształtników z wykorzystaniem oprogramowania Autodesk Fusion/Inventor.}
 }
 
-\cvevent{2014 - 2017}{Wykonawca projektu NCN}{Warsaw University of Technology}{
+\cvevent{2014 - 2017}{Wykonawca projektu NCN}{Politechnika Warszawska}{
 	{Realizacja badań naukowych związanych z układami wytwarzania energii o regulowanej predkości.},
 	{Przygotowywanie publikacji naukowych oraz uczestnictwo w konferencjach naukowych.}
 }
@@ -399,7 +416,7 @@ Jestem absolwentem elektrotechniki na Wydziale Elektrycznym Politechniki Warszaw
 
 \cvevent{12.2025}{Doktor nauk technicznych}{Politechnika Warszawska}{
 	{Temat rozprawy doktorskiej: "Jednokierunkowy przekształnik AC/DC o zmodyfikowanej topologii łącznika dwukierunkowego zasilany z trójfazowego czteroprzewodowego źródła napięcia".},
-	{Opracowałem, zbudowałem i wykonałem badania naukowe układu przekształtnikowy umożliwiający pracę w zarówno w trybie obniżającym jak i podwyższającym napięcie.}
+	{Opracowałem, zbudowałem i wykonałem badania naukowe układu przekształtnikowego umożliwiającego pracę w zarówno w trybie obniżającym jak i podwyższającym napięcie.}
 }
 
 \cvevent{07.2014}{Magister inżynier}{Politechnika Warszawska}{
@@ -407,9 +424,29 @@ Jestem absolwentem elektrotechniki na Wydziale Elektrycznym Politechniki Warszaw
 	{Opracowałem, zbudowałem i wykonałem badania naukowe układu przekształtnikowy umożliwiający pracę w zarówno w trybie obniżającym jak i podwyższającym napięcie.}
 }
 
-\cvevent{02.2012}{Inżynier}{Politechnika Warszawska}{
-	{Temat pracy magisterskiej: "Jednokierunkowy przekształnik AC/DC o zmodyfikowanej topologii łącznika dwukierunkowego zasilany z trójfazowego czteroprzewodowego źródła napięcia".},
+\cvevent{02.2013}{Inżynier}{Politechnika Warszawska}{
+	{Temat pracy inżynierskiej: "Projekt układu zasilania domu jednorodzinnego energią elektryczną pozyskiwaną z energii słonecznej".},
 	{Opracowałem, zbudowałem i wykonałem badania naukowe układu przekształtnikowy umożliwiający pracę w zarówno w trybie obniżającym jak i podwyższającym napięcie.}
+}
+
+%---------------------------------------------------------------------------------------
+%	SKILLS SECTION
+%--------------------------------------------------------------------------------------
+\cvsection{Wykształcenie}
+
+\cvevent{12.2025}{Doktor nauk technicznych}{Politechnika Warszawska}{
+	{Temat rozprawy doktorskiej: "Jednokierunkowy przekształnik AC/DC o zmodyfikowanej topologii łącznika dwukierunkowego zasilany z trójfazowego czteroprzewodowego źródła napięcia".},
+	{Opracowałem, zbudowałem i wykonałem badania symulacyjne oraz eksperymentalne układu przekształtnikowego umożliwiającego pracę w zarówno w trybie obniżającym jak i podwyższającym napięcie.}
+}
+
+\cvevent{07.2014}{Magister inżynier}{Politechnika Warszawska}{
+	{Temat pracy magisterskiej: "Jednokierunkowy przekształnik AC/DC o zmodyfikowanej topologii łącznika dwukierunkowego zasilany z trójfazowego czteroprzewodowego źródła napięcia".},
+	{Przeanalizowałem pracę wielofazowych prostowników typu Vienna.}
+}
+
+\cvevent{02.2013}{Inżynier}{Politechnika Warszawska}{
+	{Temat pracy inżynierskiej: "Projekt układu zasilania domu jednorodzinnego energią elektryczną pozyskiwaną z energii słonecznej".},
+	{Zaprojektowałem instalację fotowoltaiczną z bateryjnym magazynem energii dla domu jednorodzinnego umożliwiającego pracę na sieć oraz wyspową.}
 }
 
 %--------------------------------------------------------------------------------------------------
