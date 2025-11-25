@@ -138,6 +138,9 @@
 
 \usepackage{textpos}
 
+\usepackage[hidelinks]{hyperref}
+
+\usepackage{fontawesome5}
 
 %----------------------------------------------------------------------------------------
 %	Color DEFINITIONS
@@ -256,7 +259,7 @@
 \vspace{6pt}
 
 	\foreach \desc in {#4}{
-		$\cdot$ \desc\\[3pt]
+		$\bullet$ \desc\\[3pt]
 	}
 	
 \vspace{3pt}
@@ -312,8 +315,8 @@
 % \end{figure}
 
 
-\begin{textblock*}{2.5cm}(\textwidth-2.5cm,0cm)
-    \includegraphics[width=2.5cm]{photo_TB.JPEG}
+\begin{textblock*}{2.3cm}(\textwidth-2.3cm,0cm)
+    \includegraphics[width=2.3cm]{photo_TB.JPEG}
 \end{textblock*}
 %---------------------------------------------------------------------------------------
 %	TITLE HEADLINE
@@ -340,7 +343,10 @@
 % \end{minipage}
 
 
-\metasection{Warszawa, Polska}{\textbf{Status:} Nevomo Poland Sp. z o.o., \newline Energoelektronik}
+
+\footnotesize{\faIcon{phone} +48 508 950 117} \hspace{2cm} \footnotesize{\faIcon[regular]{envelope} tomasz.balkowiec@gmail.com} \hspace{2cm} \footnotesize{\faIcon{linkedin} \href{https://www.linkedin.com/in/tomasz-balkowiec}{linkedin.com/tomasz.balkowiec}}\\[1pt]
+\footnotesize{\faIcon{location-arrow} Warszawa, Polska} 
+
 % % \metasection{www.jankuester.com}{\textbf{Fields:} Software Engineering, Consulting, Scrum, Usability} 
 % % \metasection{tomasz.balkowiec@gmail.com}{\textbf{Techs:} Meteor, Javascript, Mongo,. Bootstrap, Bash, Git, Webstorm}
 % \metasection{tomasz.balkowiec@gmail.com}{}
@@ -409,6 +415,8 @@ Jestem absolwentem elektrotechniki na Wydziale Elektrycznym Politechniki Warszaw
 
 %\textcolor{softcol}{\hrule}
 
+\pagebreak
+
 %---------------------------------------------------------------------------------------
 %	EDUCATION SECTION
 %--------------------------------------------------------------------------------------
@@ -432,22 +440,35 @@ Jestem absolwentem elektrotechniki na Wydziale Elektrycznym Politechniki Warszaw
 %---------------------------------------------------------------------------------------
 %	SKILLS SECTION
 %--------------------------------------------------------------------------------------
-\cvsection{Wykształcenie}
+\cvsection{Umiejętności}
 
-\cvevent{12.2025}{Doktor nauk technicznych}{Politechnika Warszawska}{
-	{Temat rozprawy doktorskiej: "Jednokierunkowy przekształnik AC/DC o zmodyfikowanej topologii łącznika dwukierunkowego zasilany z trójfazowego czteroprzewodowego źródła napięcia".},
-	{Opracowałem, zbudowałem i wykonałem badania symulacyjne oraz eksperymentalne układu przekształtnikowego umożliwiającego pracę w zarówno w trybie obniżającym jak i podwyższającym napięcie.}
+$\bullet$ Języki programowania: C, C++. \\[3pt]
+$\bullet$ Znajomość oprogramowania inżynierskiego: Autodesk Inventor, Autodesk Fusion, Octave, Matlab. \\[3pt]
+$\bullet$ Znajomość programów symulacyjnych: PLECS PSIM, Simulink. \\[3pt]
+$\bullet$ Znajomość programów do tworzenia oprogramowania: Microsoft Visual Studio, Microsoft Visual Studio Code, Code Composer Studio.
+
+%---------------------------------------------------------------------------------------
+%	Achievements
+%--------------------------------------------------------------------------------------
+\cvsection{Osiągnięcia}
+
+\cvevent{}{Publikacje naukowe}{}{
+	{Współautorstwo 9 artykułów w czasopismach naukowych.},
+	{Współautorstwo 20 publikacji naukowych w materiałach konferencji międzynarodowych oraz krajowych.}
 }
 
-\cvevent{07.2014}{Magister inżynier}{Politechnika Warszawska}{
-	{Temat pracy magisterskiej: "Jednokierunkowy przekształnik AC/DC o zmodyfikowanej topologii łącznika dwukierunkowego zasilany z trójfazowego czteroprzewodowego źródła napięcia".},
-	{Przeanalizowałem pracę wielofazowych prostowników typu Vienna.}
+\cvevent{}{Patenty}{}{
+	{Współautorstwo patentu "Prostownik sterowany" o numerze PL 228952.}
 }
 
-\cvevent{02.2013}{Inżynier}{Politechnika Warszawska}{
-	{Temat pracy inżynierskiej: "Projekt układu zasilania domu jednorodzinnego energią elektryczną pozyskiwaną z energii słonecznej".},
-	{Zaprojektowałem instalację fotowoltaiczną z bateryjnym magazynem energii dla domu jednorodzinnego umożliwiającego pracę na sieć oraz wyspową.}
+\cvevent{}{Nagrody i wyróżnienia}{}{
+	{Nagroda zespołowa I stopnia JM Rektora PW za osiągnięcia naukowe w latach 2020-2021.},	
+	{Nagroda zespołowa II stopnia JM Rektora PW za osiągnięcia naukowe w latach 2017-2018.},
+	{Nagroda "Best Paper Award" na konferencji EVER 2017.},
+	{Nagroda zespołowa III stopnia JM Rektora PW za osiągnięcia naukowe w latach 2015-2016.},	
+	{Drugie miejsce w Konkursie dla Młodych Naukowców na konferencji naukowej CPE-POWERENG 2016.}
 }
+
 
 %--------------------------------------------------------------------------------------------------
 %	ARTIFICIAL FOOTER (fancy footer cannot exceed linewidth) 
