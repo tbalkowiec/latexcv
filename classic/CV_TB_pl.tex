@@ -142,6 +142,23 @@
 
 \usepackage{fontawesome5}
 
+\usepackage{forloop}
+
+
+\usepackage{multido}
+
+\usepackage[none]{hyphenat}
+
+\newcommand{\Circle}{\faIcon{circle}}
+\newcommand{\CIRCLE}{\faIcon[regular]{circle}}
+
+\newcommand{\dottedSkill}[2]{%
+  %parameter 1 the filled dots
+  %parameter 2 the max dots  
+  \multido{\ix=1+1}{#1}{\Circle}%
+  \ifnum#1<#2 \multido{\ix=#1+1}{\numexpr#2-#1}{\CIRCLE}\fi
+}%
+
 %----------------------------------------------------------------------------------------
 %	Color DEFINITIONS
 %---------------------------------------------------------------------------------------- 
@@ -216,6 +233,13 @@
 %	custom sections
 %----------------------------------------------------------------------------------------
 
+\newcommand{\skilllevel}[2]
+{
+	\foreach \desc in {#2}{
+		\desc \hspace*{1cm} \dottedSkill{#1}{5} \\[3pt]
+	}
+}
+
 % create a coloured box with arrow and title as cv section headline
 % param 1: section title
 %
@@ -272,6 +296,20 @@
 	#2
 }
 
+% \newcommand{\testnumber}[1]{
+% 	\newcounter{rows}
+% 	\setcounter{rows}{#1}
+
+% 	\newcounter{columns}
+% 	\setcounter{columns}{#2}
+
+% 	number of rows: \the\numexpr #1/4 \relax \\
+% 	number of columns: \the\numexpr #1 \relax \\
+% 	\multido{\ix=1+1}{\the\numexpr #1/4 \relax}{test
+% 	}
+% }
+
+
 %----------------------------------------------------------------------------------------
 % CUSTOM STRUT FOR EMPTY BOXES
 %----------------------------------------- -----------------------------------------------
@@ -315,8 +353,8 @@
 % \end{figure}
 
 
-\begin{textblock*}{2.3cm}(\textwidth-2.3cm,0cm)
-    \includegraphics[width=2.3cm]{photo_TB.JPEG}
+\begin{textblock*}{2.8cm}(\textwidth-2.8cm,0cm)
+    \includegraphics[trim=0 200 0 200, clip,width=2.8cm]{photo_TB.JPEG}
 \end{textblock*}
 %---------------------------------------------------------------------------------------
 %	TITLE HEADLINE
@@ -344,7 +382,7 @@
 
 
 
-\footnotesize{\faIcon{phone} +48 508 950 117} \hspace{2cm} \footnotesize{\faIcon[regular]{envelope} tomasz.balkowiec@gmail.com} \hspace{2cm} \footnotesize{\faIcon{linkedin} \href{https://www.linkedin.com/in/tomasz-balkowiec}{linkedin.com/tomasz.balkowiec}}\\[1pt]
+\footnotesize{\faIcon{phone} +48 508 950 117} \hspace{1cm} \footnotesize{\faIcon[regular]{envelope} tomasz.balkowiec@gmail.com} \hspace{1cm} \footnotesize{\faIcon{linkedin} \href{https://www.linkedin.com/in/tomasz-balkowiec}{linkedin.com/tomasz.balkowiec}}\\[1pt]
 \footnotesize{\faIcon{location-arrow} Warszawa, Polska} 
 
 % % \metasection{www.jankuester.com}{\textbf{Fields:} Software Engineering, Consulting, Scrum, Usability} 
@@ -440,12 +478,68 @@ Jestem absolwentem elektrotechniki na Wydziale Elektrycznym Politechniki Warszaw
 %---------------------------------------------------------------------------------------
 %	SKILLS SECTION
 %--------------------------------------------------------------------------------------
+\begin{tabular}{m{0.5\textwidth}|m{0.5\textwidth}}
+
+\end{tabular}
 \cvsection{Umiejętności}
 
-$\bullet$ Języki programowania: C, C++. \\[3pt]
-$\bullet$ Znajomość oprogramowania inżynierskiego: Autodesk Inventor, Autodesk Fusion, Octave, Matlab. \\[3pt]
-$\bullet$ Znajomość programów symulacyjnych: PLECS PSIM, Simulink. \\[3pt]
-$\bullet$ Znajomość programów do tworzenia oprogramowania: Microsoft Visual Studio, Microsoft Visual Studio Code, Code Composer Studio.
+% \begin{tabular}{m{0.25\textwidth}|m{0.25\textwidth}|m{0.25\textwidth}|m{0.25\textwidth}}
+% 	C, C++ \\ \dottedSkill{4}{5}
+% 	&
+% 	C\#, Java \hspace*{0.5 cm} \dottedSkill{3}{5}
+% 	&
+% 	Autodesk Inventor, Fusion \hspace*{0.5 cm} \dottedSkill{3}{5}
+% 	&
+% 	d
+% \end{tabular}
+
+\cvevent{}{Języki programowania}{}{}
+\begin{tabular}{m{0.15\textwidth}m{0.15\textwidth}m{0.15\textwidth}m{0.15\textwidth}m{0.15\textwidth}m{0.15\textwidth}}
+	C, C++ & \dottedSkill{4}{5}
+	&
+	C\#, Java & \dottedSkill{2}{5}
+\end{tabular}
+
+\vspace*{6pt}
+
+\cvevent{}{Języki obce}{}{}
+\begin{tabular}{m{0.15\textwidth}m{0.15\textwidth}m{0.15\textwidth}m{0.15\textwidth}m{0.15\textwidth}m{0.15\textwidth}}
+	Angielski & \dottedSkill{4}{5}
+	&
+	Rosyjski & \dottedSkill{2}{5}
+\end{tabular}
+
+\vspace*{6pt}
+
+% \cvevent{}{Programy}{}{
+% 	{Bardzo dobra znajomość środowiska programistycznego: Microsoft Visual Studio, Microsoft Visual Studio Code, Code Composer Studio, Octave, Matlab},
+% 	{Bardzo dobra znajomość programów symulacyjnych: PLECS, PSIM, Matlab Simulink.},
+% 	{Dobra znajomość oprogramowania inżynierskiego: Autodesk Inventor, Autodesk Fusion.}
+% }
+
+\cvevent{}{Programy}{}{}
+\begin{tabular}{m{0.18\textwidth}m{0.1\textwidth}m{0.18\textwidth}m{0.1\textwidth}m{0.18\textwidth}m{0.1\textwidth}}
+	Microsoft Visual Studio \newline \& \newline Visual Studio Code & \dottedSkill{4}{5}
+	&
+	Code Composer Studio & \dottedSkill{5}{5}
+	&
+	Matlab/Octave & \dottedSkill{5}{5}
+	\\ \vspace*{8pt}
+	PLECS & \dottedSkill{4}{5}
+	&
+	PSIM & \dottedSkill{4}{5}
+	&
+	Simulink & \dottedSkill{4}{5}
+	\\ \vspace*{8pt}
+	Autodesk Inventor \newline Autodesk Fusion & \dottedSkill{4}{5}
+\end{tabular}
+
+
+\cvevent{}{Narzędzia}{}{
+	{Git},
+	{Jira}
+}
+
 
 %---------------------------------------------------------------------------------------
 %	Achievements
@@ -458,7 +552,7 @@ $\bullet$ Znajomość programów do tworzenia oprogramowania: Microsoft Visual S
 }
 
 \cvevent{}{Patenty}{}{
-	{Współautorstwo patentu "Prostownik sterowany" o numerze PL 228952.}
+	{Współautorstwo patentu  pt. "Prostownik sterowany" o numerze \href{https://worldwide.espacenet.com/patent/search/family/059897515/publication/PL228952B1?q=pn\%3DPL228952B1}{PL228952}.}
 }
 
 \cvevent{}{Nagrody i wyróżnienia}{}{
@@ -468,7 +562,6 @@ $\bullet$ Znajomość programów do tworzenia oprogramowania: Microsoft Visual S
 	{Nagroda zespołowa III stopnia JM Rektora PW za osiągnięcia naukowe w latach 2015-2016.},	
 	{Drugie miejsce w Konkursie dla Młodych Naukowców na konferencji naukowej CPE-POWERENG 2016.}
 }
-
 
 %--------------------------------------------------------------------------------------------------
 %	ARTIFICIAL FOOTER (fancy footer cannot exceed linewidth) 
