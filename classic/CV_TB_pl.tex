@@ -1,0 +1,586 @@
+%-----------------------------------------------------------------------------------------------------------------------------------------------%
+%	The MIT License (MIT)
+%
+%	Copyright (c) 2015 Jan Küster
+%
+%	Permission is hereby granted, free of charge, to any person obtaining a copy
+%	of this software and associated documentation files (the "Software"), to deal
+%	in the Software without restriction, including without limitation the rights
+%	to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+%	copies of the Software, and to permit persons to whom the Software is
+%	furnished to do so, subject to the following conditions:
+%	
+%	THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+%	IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+%	FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+%	AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+%	LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+%	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+%	THE SOFTWARE.
+%	
+%
+%-----------------------------------------------------------------------------------------------------------------------------------------------%
+
+
+%============================================================================%
+%
+%	DOCUMENT DEFINITION
+%
+%============================================================================%
+
+%we use article class because we want to fully customize the page and don't use a cv template
+\documentclass[10pt,A4]{article}	
+
+
+%----------------------------------------------------------------------------------------
+%	ENCODING
+%----------------------------------------------------------------------------------------
+
+%we use utf8 since we want to build from any machine
+\usepackage[utf8]{inputenc}		
+
+%----------------------------------------------------------------------------------------
+%	LOGIC
+%----------------------------------------------------------------------------------------
+
+% provides \isempty test
+\usepackage{xifthen}
+
+%----------------------------------------------------------------------------------------
+%	FONT
+%----------------------------------------------------------------------------------------
+
+% some tex-live fonts - choose your own
+
+\usepackage[defaultsans]{droidsans}
+%\usepackage[default]{comfortaa}
+%\usepackage{cmbright}
+%\usepackage[default]{raleway}
+%\usepackage{fetamont}
+%\usepackage[default]{gillius}
+%\usepackage[light,math]{iwona}
+%\usepackage[thin]{roboto} 
+
+
+% set font default
+\renewcommand*\familydefault{\sfdefault} 	
+\usepackage[T1]{fontenc}
+
+% more font size definitions
+\usepackage{moresize}		
+
+
+%----------------------------------------------------------------------------------------
+%	PAGE LAYOUT  DEFINITIONS
+%----------------------------------------------------------------------------------------
+
+%debug page outer frames
+%\usepackage{showframe}			
+
+
+%define page styles using geometry
+\usepackage[a4paper]{geometry}		
+
+% for example, change the margins to 2 inches all round
+\geometry{top=1.25cm, bottom=-.6cm, left=1.5cm, right=1.5cm} 	
+
+%use customized header
+\usepackage{fancyhdr}				
+\pagestyle{fancy}
+
+%less space between header and content
+\setlength{\headheight}{-5pt}		
+
+
+%customize entries left, center and right
+%\lhead{}
+%\chead{}
+%\rhead{}
+
+
+%indentation is zero
+\setlength{\parindent}{0mm}
+
+%----------------------------------------------------------------------------------------
+%	TABLE /ARRAY DEFINITIONS
+%---------------------------------------------------------------------------------------- 
+
+%for layouting tables
+\usepackage{multicol}			
+\usepackage{multirow}
+
+%extended aligning of tabular cells
+\usepackage{array}
+
+\newcolumntype{x}[1]{%
+>{\raggedleft\hspace{0pt}}p{#1}}%
+
+
+%----------------------------------------------------------------------------------------
+%	GRAPHICS DEFINITIONS
+%---------------------------------------------------------------------------------------- 
+
+%for header image
+\usepackage{graphicx}
+
+%for floating figures
+\usepackage{wrapfig}
+\usepackage{float}
+\usepackage{wrapfig}
+%\floatstyle{boxed} 
+%\restylefloat{figure}
+
+%for drawing graphics		
+\usepackage{tikz}				
+\usetikzlibrary{shapes, backgrounds,mindmap, trees}
+
+\usepackage{tabularx}
+
+\usepackage{textpos}
+
+\usepackage[hidelinks]{hyperref}
+
+\usepackage{fontawesome5}
+
+\usepackage{forloop}
+
+
+\usepackage{multido}
+
+\usepackage[none]{hyphenat}
+
+\newcommand{\Circle}{\faIcon{circle}}
+\newcommand{\CIRCLE}{\faIcon[regular]{circle}}
+
+\newcommand{\dottedSkill}[2]{%
+  %parameter 1 the filled dots
+  %parameter 2 the max dots  
+  \multido{\ix=1+1}{#1}{\Circle}%
+  \ifnum#1<#2 \multido{\ix=#1+1}{\numexpr#2-#1}{\CIRCLE}\fi
+}%
+
+%----------------------------------------------------------------------------------------
+%	Color DEFINITIONS
+%---------------------------------------------------------------------------------------- 
+
+\usepackage{color}
+
+%accent color
+\definecolor{sectcol}{RGB}{0,150,255}
+
+%dark background color
+\definecolor{bgcol}{RGB}{110,110,110}
+
+%light background / accent color
+\definecolor{softcol}{RGB}{225,225,225}
+
+
+%============================================================================%
+%
+%
+%	DEFINITIONS
+%
+%
+%============================================================================%
+
+%----------------------------------------------------------------------------------------
+% 	HEADER
+%----------------------------------------------------------------------------------------
+
+% remove top header line
+\renewcommand{\headrulewidth}{0pt} 
+
+%remove bottom header line
+\renewcommand{\footrulewidth}{0pt}	  	
+
+%remove pagenum
+\renewcommand{\thepage}{}	
+
+%remove section num		
+\renewcommand{\thesection}{}			
+
+%----------------------------------------------------------------------------------------
+% 	ARROW GRAPHICS in Tikz
+%----------------------------------------------------------------------------------------
+
+% a six pointed arrow pointing to the left
+\newcommand{\tzlarrow}{(0,0) -- (0.2,0) -- (0.3,0.2) -- (0.2,0.4) -- (0,0.4) -- (0.1,0.2) -- cycle;}	
+
+% include the left arrow into a tikz picture
+% param1: fill color
+%
+\newcommand{\larrow}[1]
+{\begin{tikzpicture}[scale=0.58]
+	 \filldraw[fill=#1!100,draw=#1!100!black]  \tzlarrow
+ \end{tikzpicture}
+}
+
+% a six pointed arrow pointing to the right
+\newcommand{\tzrarrow}{ (0,0.2) -- (0.1,0) -- (0.3,0) -- (0.2,0.2) -- (0.3,0.4) -- (0.1,0.4) -- cycle;}
+
+% include the right arrow into a tikz picture
+% param1: fill color
+%
+\newcommand{\rarrow}
+{\begin{tikzpicture}[scale=0.7]
+	\filldraw[fill=sectcol!100,draw=sectcol!100!black] \tzrarrow
+ \end{tikzpicture}
+}
+
+
+
+%----------------------------------------------------------------------------------------
+%	custom sections
+%----------------------------------------------------------------------------------------
+
+\newcommand{\skilllevel}[2]
+{
+	\foreach \desc in {#2}{
+		\desc \hspace*{1cm} \dottedSkill{#1}{5} \\[3pt]
+	}
+}
+
+% create a coloured box with arrow and title as cv section headline
+% param 1: section title
+%
+\newcommand{\cvsection}[1]
+{
+	\begin{center}
+		\large\textcolor{sectcol}{\textbf{#1}}
+	\end{center}
+}
+
+%create a coloured arrow with title as cv meta section section
+% param 1: meta section title
+%
+\newcommand{\metasection}[2]
+{
+%\begin{tabular*}{1\textwidth}{r r}
+\footnotesize{#2} \hspace*{\fill} \footnotesize{#1}\\[1pt]
+%\end{tabular*}
+}
+
+%----------------------------------------------------------------------------------------
+%	 CV EVENT
+%----------------------------------------------------------------------------------------
+
+% creates a stretched box as cv entry headline followed by some paragraphs about 
+% the work you did
+% param 1:	event time i.e. 2014 or 2011-2014 etc.
+% param 2:	event name (what did you do?)
+% param 3:	institution (where did you work / study)
+% param 4:	list of paragraphs
+%
+\newcommand{\cvevent}[4]
+{
+
+\begin{tabular*}{1\textwidth}{p{13.6cm}  x{3.9cm}}
+	\textbf{#2} - \textcolor{bgcol}{#3} &   \vspace{2.5pt}\textcolor{sectcol}{#1}
+\end{tabular*}
+
+\vspace{-8pt}
+\textcolor{softcol}{\hrule}
+\vspace{6pt}
+
+	\foreach \desc in {#4}{
+		$\bullet$ \desc\\[3pt]
+	}
+	
+\vspace{3pt}
+}
+
+% creates a stretched box as 
+\newcommand{\cveventmeta}[2]
+{
+	\mbox{\mystrut \hspace{87pt}\textit{#1}}\\
+	#2
+}
+
+% \newcommand{\testnumber}[1]{
+% 	\newcounter{rows}
+% 	\setcounter{rows}{#1}
+
+% 	\newcounter{columns}
+% 	\setcounter{columns}{#2}
+
+% 	number of rows: \the\numexpr #1/4 \relax \\
+% 	number of columns: \the\numexpr #1 \relax \\
+% 	\multido{\ix=1+1}{\the\numexpr #1/4 \relax}{test
+% 	}
+% }
+
+
+%----------------------------------------------------------------------------------------
+% CUSTOM STRUT FOR EMPTY BOXES
+%----------------------------------------- -----------------------------------------------
+\newcommand{\mystrut}{\rule[-.3\baselineskip]{0pt}{\baselineskip}}
+
+%----------------------------------------------------------------------------------------
+% CUSTOM LOREM IPSUM
+%----------------------------------------------------------------------------------------
+\newcommand{\lorem}
+{Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus.}
+
+
+
+%============================================================================%
+%
+%
+%
+%	DOCUMENT CONTENT
+%
+%
+%
+%============================================================================%
+\begin{document}
+
+\sloppy
+%use our custom fancy header definitions
+\pagestyle{fancy}	
+
+
+
+
+
+%----------------------------------------------------------------------------------------
+%	HEADER IMAGE
+%----------------------------------------------------------------------------------------
+% \includegraphics[trim= 320 130 460 210,clip,width=0.2\linewidth]
+% \begin{figure}[H]
+% \begin{flushright}
+% 	\includegraphics[height=5\baselineskip]{photo_TB.JPEG}	%trimming relative to image size!
+% \end{flushright}
+% \end{figure}
+
+
+\begin{textblock*}{2.8cm}(\textwidth-2.8cm,0cm)
+    \includegraphics[trim=0 200 0 200, clip,width=2.8cm]{photo_TB.JPEG}
+\end{textblock*}
+%---------------------------------------------------------------------------------------
+%	TITLE HEADLINE
+%----------------------------------------------------------------------------------------
+\vspace{-8pt}
+\begin{center}
+	\HUGE \textsc{Tomasz Bałkowiec} \\ [2pt]
+	%  \textcolor{sectcol}{\rule[-1mm]{1mm}{0.9cm}} \textsc{Resume}\\[2pt]
+	\small \textsc{Energoelektronik} \textcolor{sectcol}{\rule[-1mm]{1mm}{0.45cm}} \textsc{Adiunkt badawczo-dydaktyczny}\\[2pt]
+\end{center}
+
+%\vspace{6pt}
+
+%---------------------------------------------------------------------------------------
+%	META SECTION
+% %----------------------------------------------------------------------------------------
+
+% \begin{minipage}{0.6\textwidth}% adapt widths of minipages to your needs
+% \metasection{Warszawa, Polska}{\textbf{Status:} Nevomo Poland Sp. z o.o., \newline Energoelektronik}
+% \end{minipage}%
+% \hfill%
+% \begin{minipage}{0.3\textwidth}\raggedleft
+% \includegraphics[width=0.3\textwidth]{photo_TB.JPEG}
+% \end{minipage}
+
+
+
+\footnotesize{\faIcon{phone} +48 508 950 117} \hspace{1cm} \footnotesize{\faIcon[regular]{envelope} tomasz.balkowiec@gmail.com} \hspace{1cm} \footnotesize{\faIcon{linkedin} \href{https://www.linkedin.com/in/tomasz-balkowiec}{linkedin.com/tomasz.balkowiec}}\\[1pt]
+\footnotesize{\faIcon{location-arrow} Warszawa, Polska} 
+
+% % \metasection{www.jankuester.com}{\textbf{Fields:} Software Engineering, Consulting, Scrum, Usability} 
+% % \metasection{tomasz.balkowiec@gmail.com}{\textbf{Techs:} Meteor, Javascript, Mongo,. Bootstrap, Bash, Git, Webstorm}
+% \metasection{tomasz.balkowiec@gmail.com}{}
+% \metasection{+48 508 950 117}{}
+% \metasection{+48 508 950 117}{\textbf{Activities:} Global Game Jam, Open Source, Fitness}
+% \vspace{-2pt}
+% \textcolor{softcol}{\hrule}
+% \vspace{6pt}
+
+\normalsize
+
+%---------------------------------------------------------------------------------------
+%	SUMMARAY (optional)
+%----------------------------------------------------------------------------------------
+\vspace{-6pt}
+\cvsection{Podsumowanie}
+Jestem absolwentem elektrotechniki na Wydziale Elektrycznym Politechniki Warszawskiej oraz doktorem nauk technicznych. Obecnie pracuję jako energoelektronik w firmie Nevomo Poland oraz adiunkt badawczo-dydaktyczny na Politechnice Warszawskiej. W pracy zawodowej zajmuje się głównie badaniami różnego rodzaju przekształtników oraz implementacją algorytmów sterowania na mikrokontrolerze sygnałowym. Do najciekawszych aplikacji przy których miałem okazję brać udział są prace nad przekształtnikami opartymi na tranzystorach SiC/GaN oraz napęd z silnikiem liniowym wykorzystywanym w aplikacji kolejowej.
+\\
+
+%============================================================================%
+%
+%	CV SECTIONS AND EVENTS (MAIN CONTENT)
+%
+%============================================================================%
+
+%---------------------------------------------------------------------------------------
+%	EXPERIENCE
+%----------------------------------------------------------------------------------------
+\cvsection{Doświadczenie zawodowe}
+
+\cvevent{09.2022 - obecnie}{Energoelektronik}{Nevomo Poland Sp. z o.o.}{
+	{Badania symulacyjne układów przekształtnikowych - prostowników oraz falowników wraz z układami sterowania.},
+	{Implementacja algorytmów sterowania na mikrokontrolerze sygnałowym z serii C2000.},
+	{Uruchomienia przekształtników napędowych z silnikiem liniowym.}
+}
+
+%
+\cvevent{02.2025 - obecnie}{Adiunkt badawczo-dydaktyczny}{Politechnika Warszawska}{
+	{Realizacja badań naukowych, przygotowywanie publikacji naukowych oraz udział w konferencjach naukowych związanych głównie z tematyką rozprawy doktorskiej.},
+	{Przygotowywanie materiałów dydaktycznych oraz prowadzenie wykładów oraz zajęć laboratoryjnych.}
+}
+
+\cvevent{02.2021 - 01.2025}{Asystent badawczo-dydaktyczny}{Politechnika Warszawska}{
+	{Realizacja badań naukowych, przygotowywanie publikacji naukowych oraz udział w konferencjach naukowych związanych głównie z tematyką rozprawy doktorskiej.},
+	{Przygotowywanie materiałów dydaktycznych oraz prowadzenie wykładów oraz zajęć laboratoryjnych.}
+}
+
+\cvevent{2024 - 2025}{Wykonawca projektu w ramach Konsorcjum}{Politechnika Warszawska}{
+	{Implementacja algorytmów synchronizacji przekształtników z siecią elektroenergetyczną.},
+	{Opracowanie modelu symulacyjnego integrującego string'i przekształtnikowe współpracujące z siecią elektroenergetyczną.}
+}
+
+\cvevent{2018 - 2021}{Wykonawca projektu NCBR}{Politechnika Warszawska}{
+	{Projektowanie oraz wykonanie przekształtników opartych na tranzystorach GaN oraz SiC.},
+	{Modelowanie dwu- i trójwymiarowe budowanych przekształtników z wykorzystaniem oprogramowania Autodesk Fusion/Inventor.}
+}
+
+\cvevent{2014 - 2017}{Wykonawca projektu NCN}{Politechnika Warszawska}{
+	{Realizacja badań naukowych związanych z układami wytwarzania energii o regulowanej predkości.},
+	{Przygotowywanie publikacji naukowych oraz uczestnictwo w konferencjach naukowych.}
+}
+
+%\textcolor{softcol}{\hrule}
+
+%\textcolor{softcol}{\hrule}
+
+%\textcolor{softcol}{\hrule}
+
+\pagebreak
+
+%---------------------------------------------------------------------------------------
+%	EDUCATION SECTION
+%--------------------------------------------------------------------------------------
+\cvsection{Wykształcenie}
+
+\cvevent{12.2025}{Doktor nauk technicznych}{Politechnika Warszawska}{
+	{Temat rozprawy doktorskiej: "Jednokierunkowy przekształnik AC/DC o zmodyfikowanej topologii łącznika dwukierunkowego zasilany z trójfazowego czteroprzewodowego źródła napięcia".},
+	{Opracowałem, zbudowałem i wykonałem badania naukowe układu przekształtnikowego umożliwiającego pracę w zarówno w trybie obniżającym jak i podwyższającym napięcie.}
+}
+
+\cvevent{07.2014}{Magister inżynier}{Politechnika Warszawska}{
+	{Temat pracy magisterskiej: "Jednokierunkowy przekształnik AC/DC o zmodyfikowanej topologii łącznika dwukierunkowego zasilany z trójfazowego czteroprzewodowego źródła napięcia".},
+	{Opracowałem, zbudowałem i wykonałem badania naukowe układu przekształtnikowy umożliwiający pracę w zarówno w trybie obniżającym jak i podwyższającym napięcie.}
+}
+
+\cvevent{02.2013}{Inżynier}{Politechnika Warszawska}{
+	{Temat pracy inżynierskiej: "Projekt układu zasilania domu jednorodzinnego energią elektryczną pozyskiwaną z energii słonecznej".},
+	{Opracowałem, zbudowałem i wykonałem badania naukowe układu przekształtnikowy umożliwiający pracę w zarówno w trybie obniżającym jak i podwyższającym napięcie.}
+}
+
+%---------------------------------------------------------------------------------------
+%	SKILLS SECTION
+%--------------------------------------------------------------------------------------
+\begin{tabular}{m{0.5\textwidth}|m{0.5\textwidth}}
+
+\end{tabular}
+\cvsection{Umiejętności}
+
+% \begin{tabular}{m{0.25\textwidth}|m{0.25\textwidth}|m{0.25\textwidth}|m{0.25\textwidth}}
+% 	C, C++ \\ \dottedSkill{4}{5}
+% 	&
+% 	C\#, Java \hspace*{0.5 cm} \dottedSkill{3}{5}
+% 	&
+% 	Autodesk Inventor, Fusion \hspace*{0.5 cm} \dottedSkill{3}{5}
+% 	&
+% 	d
+% \end{tabular}
+
+\cvevent{}{Języki programowania}{}{}
+\begin{tabular}{m{0.15\textwidth}m{0.15\textwidth}m{0.15\textwidth}m{0.15\textwidth}m{0.15\textwidth}m{0.15\textwidth}}
+	C, C++ & \dottedSkill{4}{5}
+	&
+	C\#, Java & \dottedSkill{2}{5}
+\end{tabular}
+
+\vspace*{6pt}
+
+\cvevent{}{Języki obce}{}{}
+\begin{tabular}{m{0.15\textwidth}m{0.15\textwidth}m{0.15\textwidth}m{0.15\textwidth}m{0.15\textwidth}m{0.15\textwidth}}
+	Angielski & \dottedSkill{4}{5}
+	&
+	Rosyjski & \dottedSkill{2}{5}
+\end{tabular}
+
+\vspace*{6pt}
+
+% \cvevent{}{Programy}{}{
+% 	{Bardzo dobra znajomość środowiska programistycznego: Microsoft Visual Studio, Microsoft Visual Studio Code, Code Composer Studio, Octave, Matlab},
+% 	{Bardzo dobra znajomość programów symulacyjnych: PLECS, PSIM, Matlab Simulink.},
+% 	{Dobra znajomość oprogramowania inżynierskiego: Autodesk Inventor, Autodesk Fusion.}
+% }
+
+\cvevent{}{Programy}{}{}
+\begin{tabular}{m{0.18\textwidth}m{0.1\textwidth}m{0.18\textwidth}m{0.1\textwidth}m{0.18\textwidth}m{0.1\textwidth}}
+	Microsoft Visual Studio \newline \& \newline Visual Studio Code & \dottedSkill{4}{5}
+	&
+	Code Composer Studio & \dottedSkill{5}{5}
+	&
+	Matlab/Octave & \dottedSkill{5}{5}
+	\\ \vspace*{8pt}
+	PLECS & \dottedSkill{4}{5}
+	&
+	PSIM & \dottedSkill{4}{5}
+	&
+	Simulink & \dottedSkill{4}{5}
+	\\ \vspace*{8pt}
+	Autodesk Inventor \newline Autodesk Fusion & \dottedSkill{4}{5}
+\end{tabular}
+
+
+\cvevent{}{Narzędzia}{}{
+	{Git},
+	{Jira}
+}
+
+
+%---------------------------------------------------------------------------------------
+%	Achievements
+%--------------------------------------------------------------------------------------
+\cvsection{Osiągnięcia}
+
+\cvevent{}{Publikacje naukowe}{}{
+	{Współautorstwo 9 artykułów w czasopismach naukowych.},
+	{Współautorstwo 20 publikacji naukowych w materiałach konferencji międzynarodowych oraz krajowych.}
+}
+
+\cvevent{}{Patenty}{}{
+	{Współautorstwo patentu  pt. "Prostownik sterowany" o numerze \href{https://worldwide.espacenet.com/patent/search/family/059897515/publication/PL228952B1?q=pn\%3DPL228952B1}{PL228952}.}
+}
+
+\cvevent{}{Nagrody i wyróżnienia}{}{
+	{Nagroda zespołowa I stopnia JM Rektora PW za osiągnięcia naukowe w latach 2020-2021.},	
+	{Nagroda zespołowa II stopnia JM Rektora PW za osiągnięcia naukowe w latach 2017-2018.},
+	{Nagroda "Best Paper Award" na konferencji EVER 2017.},
+	{Nagroda zespołowa III stopnia JM Rektora PW za osiągnięcia naukowe w latach 2015-2016.},	
+	{Drugie miejsce w Konkursie dla Młodych Naukowców na konferencji naukowej CPE-POWERENG 2016.}
+}
+
+%--------------------------------------------------------------------------------------------------
+%	ARTIFICIAL FOOTER (fancy footer cannot exceed linewidth) 
+%--------------------------------------------------------------------------------------------------
+
+% \null
+% \vspace*{\fill}
+% \hspace{-0.25\linewidth}\colorbox{white}{\makebox[1.5\linewidth][c]{\mystrut  \textnormal{\textcolor{sectcol}{www.jankuester.com} $\cdot$ \textcolor{sectcol}{github.com/jankapunkt}}}}
+
+
+
+
+%============================================================================%
+%
+%
+%
+%	DOCUMENT END
+%
+%
+%
+%============================================================================%
+\end{document}
