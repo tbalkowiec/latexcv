@@ -149,6 +149,8 @@
 
 \usepackage[none]{hyphenat}
 
+\usepackage{enumitem}
+
 \newcommand{\Circle}{\faIcon{circle}}
 \newcommand{\CIRCLE}{\faIcon[regular]{circle}}
 
@@ -400,9 +402,86 @@
 %	SUMMARAY (optional)
 %----------------------------------------------------------------------------------------
 \vspace{-6pt}
-\cvsection{Podsumowanie}
-Jestem absolwentem elektrotechniki na Wydziale Elektrycznym Politechniki Warszawskiej oraz doktorem nauk technicznych. Obecnie pracuję jako energoelektronik w firmie Nevomo Poland oraz adiunkt badawczo-dydaktyczny na Politechnice Warszawskiej. W pracy zawodowej zajmuje się głównie badaniami różnego rodzaju przekształtników oraz implementacją algorytmów sterowania na mikrokontrolerze sygnałowym. Do najciekawszych aplikacji przy których miałem okazję brać udział są prace nad przekształtnikami opartymi na tranzystorach SiC/GaN oraz napęd z silnikiem liniowym wykorzystywanym w aplikacji kolejowej.
+
+\cvsection{Kluczowe umiejętności}
+\begin{tabular}{m{0.5\textwidth}m{0.5\textwidth}}
+	$\bullet$ Programowanie w C/C++
+	&
+	$\bullet$ Modelowanie 2D/3D w Autodesk Inventor/Fusion
+	\\
+	$\bullet$ Programowanie mikrokontrolerów z seriii C2000
+	&
+	$\bullet$ Projektowanie, wykonanie i uruchamianie \newline przekształtników energoelektronicznych
+	\\
+	$\bullet$ Programowanie w Matlab/Octave
+	&
+	$\bullet$ Projektowanie PCB w Autodesk Eagle
+	\\
+	$\bullet$ Modelowanie i symulacja układów przekształtnikowych w PLECS/PSIM/Simulink
+\end{tabular}
+
+\cvsection{Kluczowe projekty}
+
+$\bullet$ MagRail - lewitujący wózek kolejowy napędzany silnikiem liniowym
 \\
+Osiągnięcia:
+\hspace*{0.5cm} 
+
+
+$\bullet$ MagRail Booster - wagon towarowy napędzany silnikiem liniowym
+\\
+Osiągnięcia: \\
+- opracowałem i zaimplementowałem warstwę aplikacyjną do wymiany informacji pomiędzy pojazdem a infrastrukturą naziemną,
+- zaimplementowałem wybrane algorytmy 
+- zaimplementowałem wybrane algorytmy na mikrokontrolerze z serii C2000,
+
+$\bullet$ WidePOWER - demonstrator technologii opartej na półprzewodnikach wykonanych w technologii SiC oraz GaN
+\\
+Osiągnięcia: \\
+- zaprojektowałem oraz przetestowałem płytki PCB modułu sterownika bramkowego oraz modułu mocy dla tranzystorów GaN,\\
+- zamodelowałem konstrukcję demonostratora technologii, tj. sześciu przekształtników umieszczonych w szafie przemysłowej,
+
+
+$\bullet$ Zmodyfikowany prostownik Vienna
+\\
+Osiągnięcia: \\
+- zaprojektowałem, zbudowałem i przetestowałem tyrystorowo-tranzystorowy przekształtnik AC/DC umożliwiający pracę w szerokim zakresie napięć wyjściowych, \\
+- opracowałem i zaimplementowałem algorytmy sterowania przekształtnikiem z wykorzystaniem mikrokontrolera z serii C2000, \\
+- symulacyjnie oraz eksperymentalnie zweryfikowałem opracowane algorytmy sterowania
+
+
+Wózek kolejowy z asynchronicznym silnikiem liniowym
+
+
+APStorage 2.0 - system magazynowania i kondycjonowania energii elektrycznej \\
+Osiągnięcia: \\
+- zaimplementowałem algorytmy synchronizacji przekształtników z siecią elektroenergetyczną,\\
+- opracowałem model integrujący system zarządzania mocą oraz zespoły przekształtnikowe z układami sterowania
+
+
+
+
+
+
+% \cvevent{2024 - 2025}{Wykonawca projektu w ramach Konsorcjum}{Politechnika Warszawska}{
+% 	{Implementacja algorytmów synchronizacji przekształtników z siecią elektroenergetyczną.},
+% 	{Opracowanie modelu symulacyjnego integrującego string'i przekształtnikowe współpracujące z siecią elektroenergetyczną.}
+% }
+
+% \cvevent{2018 - 2021}{Wykonawca projektu NCBR}{Politechnika Warszawska}{
+% 	{Projektowanie oraz wykonanie przekształtników opartych na tranzystorach GaN oraz SiC.},
+% 	{Modelowanie dwu- i trójwymiarowe budowanych przekształtników z wykorzystaniem oprogramowania Autodesk Fusion/Inventor.}
+% }
+
+% \cvevent{2014 - 2017}{Wykonawca projektu NCN}{Politechnika Warszawska}{
+% 	{Realizacja badań naukowych związanych z układami wytwarzania energii o regulowanej predkości.},
+% 	{Przygotowywanie publikacji naukowych oraz uczestnictwo w konferencjach naukowych.}
+% }
+
+
+% \cvsection{Podsumowanie}
+% Jestem absolwentem elektrotechniki na Wydziale Elektrycznym Politechniki Warszawskiej oraz doktorem nauk technicznych. Obecnie pracuję jako energoelektronik w firmie Nevomo Poland oraz adiunkt badawczo-dydaktyczny na Politechnice Warszawskiej. W pracy zawodowej zajmuje się głównie badaniami różnego rodzaju przekształtników oraz implementacją algorytmów sterowania na mikrokontrolerze sygnałowym. Do najciekawszych aplikacji przy których miałem okazję brać udział są prace nad przekształtnikami opartymi na tranzystorach SiC/GaN oraz napęd z silnikiem liniowym wykorzystywanym w aplikacji kolejowej.
+% \\
 
 %============================================================================%
 %
@@ -421,7 +500,6 @@ Jestem absolwentem elektrotechniki na Wydziale Elektrycznym Politechniki Warszaw
 	{Uruchomienia przekształtników napędowych z silnikiem liniowym.}
 }
 
-%
 \cvevent{02.2025 - obecnie}{Adiunkt badawczo-dydaktyczny}{Politechnika Warszawska}{
 	{Realizacja badań naukowych, przygotowywanie publikacji naukowych oraz udział w konferencjach naukowych związanych głównie z tematyką rozprawy doktorskiej.},
 	{Przygotowywanie materiałów dydaktycznych oraz prowadzenie wykładów oraz zajęć laboratoryjnych.}
@@ -481,35 +559,35 @@ Jestem absolwentem elektrotechniki na Wydziale Elektrycznym Politechniki Warszaw
 \begin{tabular}{m{0.5\textwidth}|m{0.5\textwidth}}
 
 \end{tabular}
-\cvsection{Umiejętności}
+% \cvsection{Umiejętności}
 
-% \begin{tabular}{m{0.25\textwidth}|m{0.25\textwidth}|m{0.25\textwidth}|m{0.25\textwidth}}
-% 	C, C++ \\ \dottedSkill{4}{5}
+% % \begin{tabular}{m{0.25\textwidth}|m{0.25\textwidth}|m{0.25\textwidth}|m{0.25\textwidth}}
+% % 	C, C++ \\ \dottedSkill{4}{5}
+% % 	&
+% % 	C\#, Java \hspace*{0.5 cm} \dottedSkill{3}{5}
+% % 	&
+% % 	Autodesk Inventor, Fusion \hspace*{0.5 cm} \dottedSkill{3}{5}
+% % 	&
+% % 	d
+% % \end{tabular}
+
+% \cvevent{}{Języki programowania}{}{}
+% \begin{tabular}{m{0.15\textwidth}m{0.15\textwidth}m{0.15\textwidth}m{0.15\textwidth}m{0.15\textwidth}m{0.15\textwidth}}
+% 	C, C++ & \dottedSkill{4}{5}
 % 	&
-% 	C\#, Java \hspace*{0.5 cm} \dottedSkill{3}{5}
-% 	&
-% 	Autodesk Inventor, Fusion \hspace*{0.5 cm} \dottedSkill{3}{5}
-% 	&
-% 	d
+% 	C\#, Java & \dottedSkill{2}{5}
 % \end{tabular}
 
-\cvevent{}{Języki programowania}{}{}
-\begin{tabular}{m{0.15\textwidth}m{0.15\textwidth}m{0.15\textwidth}m{0.15\textwidth}m{0.15\textwidth}m{0.15\textwidth}}
-	C, C++ & \dottedSkill{4}{5}
-	&
-	C\#, Java & \dottedSkill{2}{5}
-\end{tabular}
+% \vspace*{6pt}
 
-\vspace*{6pt}
+% \cvevent{}{Języki obce}{}{}
+% \begin{tabular}{m{0.15\textwidth}m{0.15\textwidth}m{0.15\textwidth}m{0.15\textwidth}m{0.15\textwidth}m{0.15\textwidth}}
+% 	Angielski & \dottedSkill{4}{5}
+% 	&
+% 	Rosyjski & \dottedSkill{2}{5}
+% \end{tabular}
 
-\cvevent{}{Języki obce}{}{}
-\begin{tabular}{m{0.15\textwidth}m{0.15\textwidth}m{0.15\textwidth}m{0.15\textwidth}m{0.15\textwidth}m{0.15\textwidth}}
-	Angielski & \dottedSkill{4}{5}
-	&
-	Rosyjski & \dottedSkill{2}{5}
-\end{tabular}
-
-\vspace*{6pt}
+% \vspace*{6pt}
 
 % \cvevent{}{Programy}{}{
 % 	{Bardzo dobra znajomość środowiska programistycznego: Microsoft Visual Studio, Microsoft Visual Studio Code, Code Composer Studio, Octave, Matlab},
@@ -517,28 +595,28 @@ Jestem absolwentem elektrotechniki na Wydziale Elektrycznym Politechniki Warszaw
 % 	{Dobra znajomość oprogramowania inżynierskiego: Autodesk Inventor, Autodesk Fusion.}
 % }
 
-\cvevent{}{Programy}{}{}
-\begin{tabular}{m{0.18\textwidth}m{0.1\textwidth}m{0.18\textwidth}m{0.1\textwidth}m{0.18\textwidth}m{0.1\textwidth}}
-	Microsoft Visual Studio \newline \& \newline Visual Studio Code & \dottedSkill{4}{5}
-	&
-	Code Composer Studio & \dottedSkill{5}{5}
-	&
-	Matlab/Octave & \dottedSkill{5}{5}
-	\\ \vspace*{8pt}
-	PLECS & \dottedSkill{4}{5}
-	&
-	PSIM & \dottedSkill{4}{5}
-	&
-	Simulink & \dottedSkill{4}{5}
-	\\ \vspace*{8pt}
-	Autodesk Inventor \newline Autodesk Fusion & \dottedSkill{4}{5}
-\end{tabular}
+% \cvevent{}{Programy}{}{}
+% \begin{tabular}{m{0.18\textwidth}m{0.1\textwidth}m{0.18\textwidth}m{0.1\textwidth}m{0.18\textwidth}m{0.1\textwidth}}
+% 	Microsoft Visual Studio \newline \& \newline Visual Studio Code & \dottedSkill{4}{5}
+% 	&
+% 	Code Composer Studio & \dottedSkill{5}{5}
+% 	&
+% 	Matlab/Octave & \dottedSkill{5}{5}
+% 	\\ \vspace*{8pt}
+% 	PLECS & \dottedSkill{4}{5}
+% 	&
+% 	PSIM & \dottedSkill{4}{5}
+% 	&
+% 	Simulink & \dottedSkill{4}{5}
+% 	\\ \vspace*{8pt}
+% 	Autodesk Inventor \newline Autodesk Fusion & \dottedSkill{4}{5}
+% \end{tabular}
 
 
-\cvevent{}{Narzędzia}{}{
-	{Git},
-	{Jira}
-}
+% \cvevent{}{Narzędzia}{}{
+% 	{Git},
+% 	{Jira}
+% }
 
 
 %---------------------------------------------------------------------------------------
